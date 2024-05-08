@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.scss';
+import { MainLayout } from '@/libraries/layout';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +18,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-dev.ico" sizes="any" />
       </head>
       <body suppressHydrationWarning>
-        <main>{children}</main>
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

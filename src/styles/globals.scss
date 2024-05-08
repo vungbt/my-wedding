@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @layer base {
   @import './themes/main.scss';
@@ -30,5 +31,226 @@
 
   ::placeholder {
     color: var(--primary-color) !important;
+  }
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1002;
+  text-align: center;
+
+  .preloader-title {
+    font-size: 20pt;
+    color: currentColor;
+    line-height: 0.9;
+    position: absolute;
+    top: 41px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-family: var(--font-secondary);
+  }
+
+  .loading-heart {
+    fill: transparent;
+    stroke: var(--secondary-color);
+    stroke-width: 11;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: inline-block;
+
+    svg {
+      overflow: visible;
+      width: 11rem;
+    }
+
+    path {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 1550;
+      transform-origin: center;
+      -webkit-animation: stroke-animation 3s ease-in-out infinite forwards;
+      -khtml-animation: stroke-animation 3s ease-in-out infinite forwards;
+      -moz-animation: stroke-animation 3s ease-in-out infinite forwards;
+      -ms-animation: stroke-animation 3s ease-in-out infinite forwards;
+      -o-animation: stroke-animation 3s ease-in-out infinite forwards;
+      animation: stroke-animation 3s ease-in-out infinite forwards;
+    }
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+  }
+}
+
+.drawer {
+}
+
+// menu
+#navbar:checked ~ .drawer {
+  @apply translate-x-0 opacity-100 md:translate-y-0;
+}
+
+#navbar:checked ~ .navbar-overlay {
+  @apply visible;
+}
+
+// hero section
+.hero-section {
+  min-height: 993px;
+  @apply relative bg-transparent overflow-hidden py-16;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--tertiary-color);
+    z-index: 0;
+    opacity: 0.8;
+  }
+
+  .slideshow {
+    position: fixed;
+    max-height: 100vh;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    padding: 0;
+
+    .slides {
+      position: fixed;
+      max-height: 100vh;
+      z-index: -2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: block;
+      padding: 0;
+
+      .zs-slide {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: block;
+        padding: 0;
+        transition: all ease 0.3s;
+      }
+
+      .zs-slide {
+        background: transparent none no-repeat 50% 50%;
+        background-size: cover;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transform: scale(1.2, 1.2);
+        -moz-transform: scale(1.2, 1.2);
+        -ms-transform: scale(1.2, 1.2);
+        -o-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+        filter: grayscale(1%);
+      }
+
+      .zs-slide.active {
+        visibility: visible;
+        opacity: 1;
+        animation: zoom-in-zoom-out 15s ease infinite;
+      }
+    }
+  }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.btn {
+  &:hover {
+    .btn__v-lines {
+      height: 0;
+    }
+
+    .btn__h-lines {
+      width: 0;
+    }
+    background: rgba($color: #fff, $alpha: 0.2);
+    appearance: none;
+    @apply transition-all ease-linear duration-500;
+  }
+
+  &__v-lines {
+    content: '';
+    width: calc(100% + 16px);
+    height: calc(100% + 2px);
+    @apply absolute top-0 left-[-8px] bottom-0 right-0 border-r border-l border-solid border-white transition-all ease-linear m-auto duration-300;
+
+    &::before {
+      content: '';
+      width: calc(100% - 12px);
+      height: calc(100% + 12px);
+      @apply absolute top-0 right-0 left-0 bottom-0 border-r border-l border-solid border-white transition-all ease-linear m-auto duration-300;
+    }
+  }
+
+  &__h-lines {
+    content: '';
+    width: calc(100% + 15px);
+    height: calc(100% + 2px);
+    @apply absolute top-0 right-0 -left-2 bottom-0 border-solid border-t border-b border-white transition-all ease-linear m-auto duration-300;
+
+    &::before {
+      content: '';
+      width: calc(100% - 14px);
+      height: calc(100% + 14px);
+      @apply absolute top-0 right-0 left-0 bottom-0 border-t border-b border-solid border-white transition-all ease-linear m-auto duration-300;
+    }
   }
 }
