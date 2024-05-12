@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-import nextBuildId from 'next-build-id';
+const nextBuildId = require('next-build-id');
+
 const nextConfig = {
   output: 'standalone',
   swcMinify: true,
@@ -7,11 +8,11 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
-      },
-    ],
-  },
+        protocol: 'https',
+        hostname: '**'
+      }
+    ]
+  }
 };
 
-export default nextConfig;
+module.exports = nextConfig;
