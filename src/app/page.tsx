@@ -1,9 +1,21 @@
-import { getPages } from "@/utils/notion";
+import AboutUs from '@/libraries/about-us';
+import HeroSection from '@/libraries/hero-section';
+import { RenderIcon } from '@/libraries/icons';
+import Invitation from '@/libraries/invitation';
+import OutStory from '@/libraries/our-story';
+import { getRecordInTables } from '@/utils/notion';
+import { NotionTableType } from '@/utils/notion/type';
 
 export default async function Home() {
-  const res = await getPages()
-  console.log("res====>", res)
-  return <div>Today and always, beyond tomorrow, I need you beside me, always as my best friend, lover and forever soul mate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt porttitor venenatis. Vestibulum sit amet est nisl. Vestibulum iaculis finibus sem nec condimentum. Quisque nulla orci, aliquet sit amet sem eget, pellentesque euismod enim. Aenean quis nisl at est consequat elementum sed vel turpis. Phasellus dignissim sit amet orci vitae mattis. Phasellus a imperdiet ligula, efficitur dignissim ex. Mauris placerat aliquet sem commodo molestie.
-
-  </div>;
+  const pages = await getRecordInTables({ type: NotionTableType.Message });
+  const results = pages.results;
+  return (
+    <div>
+      <HeroSection />
+      <AboutUs />
+      <OutStory />
+      <Invitation />
+      <RenderIcon name="logo" className="w-10 h-10" />
+    </div>
+  );
 }

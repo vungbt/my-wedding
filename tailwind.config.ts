@@ -33,7 +33,8 @@ const config: Config = {
       }
     },
     fontFamily: {
-      primary: 'var(--font-primary)'
+      primary: 'var(--font-primary)',
+      secondary: 'var(--font-secondary)'
     },
     colors: {
       // default
@@ -51,11 +52,14 @@ const config: Config = {
       success: 'var(--success)',
       info: 'var(--info)',
       danger: {
-        DEFAULT: 'var(--danger)',
+        DEFAULT: 'var(--danger)'
+      },
+      gray: {
+        DEFAULT: 'var(--gray)'
       },
       warning: {
-        DEFAULT: 'var(--warning)',
-      },
+        DEFAULT: 'var(--warning)'
+      }
     },
     extend: {
       width: {
