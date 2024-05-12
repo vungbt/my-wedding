@@ -13,6 +13,10 @@ import Close from './close';
 import FlowerHero from './flower-hero';
 import Line from './line';
 import LineTwo from './line-two';
+import FlowerInvite from './flower-invite';
+import FlowerTestimonial from './flower-testimonial';
+import ChevronLeft from './chevron-left';
+import ChevronRight from './chevron-right';
 export type IconProps = {
   className?: string;
   style?: CSSProperties;
@@ -36,7 +40,11 @@ export type IconName =
   | 'close'
   | 'flower-hero'
   | 'line'
-  | 'line-two';
+  | 'line-two'
+  | 'flower-invite'
+  | 'flower-testimonial'
+  | 'chevron-right'
+  | 'chevron-left';
 export type IconsType = Record<IconName, Icon>;
 
 export const Icons: IconsType = {
@@ -81,6 +89,18 @@ export const Icons: IconsType = {
   },
   'line-two': (props: IconProps) => {
     return <LineTwo {...props} />;
+  },
+  'flower-invite': (props: IconProps) => {
+    return <FlowerInvite {...props} />;
+  },
+  'flower-testimonial': (props: IconProps) => {
+    return <FlowerTestimonial {...props} />;
+  },
+  'chevron-left': (props: IconProps) => {
+    return <ChevronLeft {...props} />;
+  },
+  'chevron-right': (props: IconProps) => {
+    return <ChevronRight {...props} />;
   }
 };
 

@@ -55,7 +55,8 @@ const config: Config = {
         DEFAULT: 'var(--danger)'
       },
       gray: {
-        DEFAULT: 'var(--gray)'
+        DEFAULT: 'var(--gray)',
+        100: 'var(--gray-100)'
       },
       warning: {
         DEFAULT: 'var(--warning)'

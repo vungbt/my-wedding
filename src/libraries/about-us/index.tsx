@@ -77,7 +77,7 @@ export default function AboutUs() {
                     {/* socials */}
                     <div className="flex items-center justify-center gap-3 mt-3">
                       {item.socials.map((item) => (
-                        <Link key={item.icon} href={item.url} target="_blank">
+                        <Link key={item.icon} href={item.url ?? '/'} target="_blank">
                           <RenderIcon name={item.icon as IconName} className="text-secondary" />
                         </Link>
                       ))}
