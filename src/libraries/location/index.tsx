@@ -6,7 +6,7 @@ export default function Location() {
   return (
     <section className="location py-16 bg-white">
       <div className="container flex items-center justify-center flex-col mb-16">
-        <h1 className="text-[36pt] text-secondary font-secondary">Location</h1>
+        <h1 className="text-[36pt] text-secondary font-secondary text-center">Location</h1>
         <RenderIcon name="line" className="!w-[189px] !h-6 text-secondary mt-4" />
       </div>
 
@@ -61,7 +61,7 @@ export default function Location() {
             className="w-full h-auto col-span-12"
             style={{ border: 0 }}
             // allowFullScreen=""
-            loading="lazy"
+            loading="eager"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>

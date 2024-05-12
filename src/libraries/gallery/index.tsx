@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 import { RenderIcon } from '../icons';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Slider, { Settings } from 'react-slick';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -67,7 +69,7 @@ export default function Gallery() {
   return (
     <section className="gallery bg-[#f9f9f9]">
       <div className="container flex items-center justify-center flex-col mb-16">
-        <h1 className="text-[36pt] text-secondary font-secondary">Wedding Gallery</h1>
+        <h1 className="text-[36pt] text-secondary font-secondary text-center">Wedding Gallery</h1>
         <RenderIcon name="line" className="!w-[189px] !h-6 text-secondary mt-4" />
       </div>
 
