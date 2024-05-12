@@ -1,15 +1,28 @@
-import React from 'react';
+import clsx from 'clsx';
+import React, { forwardRef, Ref } from 'react';
 
 type ButtonProps = {
-  title: string;
+  label: string;
+  className?: string;
 };
 
-export default function Button({ title }: ButtonProps) {
+const Button = forwardRef(function ButtonBase(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
+  const { className, label, ...reset } = props;
+
   return (
-    <button className="btn border border-solid border-white py-2 px-3 relative text-white min-w-28">
+    <button
+      ref={ref}
+      {...reset}
+      className={clsx(
+        'btn border border-solid border-white py-2 px-3 relative text-white min-w-28',
+        className
+      )}
+    >
       <span className="btn__h-lines"></span>
       <span className="btn__v-lines"></span>
-      {title}
+      {label}
     </button>
   );
-}
+});
+
+export default Button;

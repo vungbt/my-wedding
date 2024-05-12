@@ -11,6 +11,8 @@ import Logo from './logo';
 import Bars from './bars';
 import Close from './close';
 import FlowerHero from './flower-hero';
+import Line from './line';
+import LineTwo from './line-two';
 export type IconProps = {
   className?: string;
   style?: CSSProperties;
@@ -32,7 +34,9 @@ export type IconName =
   | 'logo'
   | 'bars'
   | 'close'
-  | 'flower-hero';
+  | 'flower-hero'
+  | 'line'
+  | 'line-two';
 export type IconsType = Record<IconName, Icon>;
 
 export const Icons: IconsType = {
@@ -71,6 +75,12 @@ export const Icons: IconsType = {
   },
   'flower-hero': (props: IconProps) => {
     return <FlowerHero {...props} />;
+  },
+  line: (props: IconProps) => {
+    return <Line {...props} />;
+  },
+  'line-two': (props: IconProps) => {
+    return <LineTwo {...props} />;
   }
 };
 

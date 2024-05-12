@@ -22,7 +22,7 @@ export default function HeroSection() {
   // }, [active, images.length]);
 
   return (
-    <div className="hero-section pt-16">
+    <section className="hero-section pt-16">
       {/* slideshow */}
       <div className="slideshow">
         <div className="slides">
@@ -41,10 +41,10 @@ export default function HeroSection() {
       </div>
 
       {/* info */}
-      <div className="container relative z-[2] mt-32">
-        <div className="w-full flex items-center justify-center flex-col flex-wrap py-24">
+      <div className="container z-[2] mt-32 relative">
+        <div className="w-full flex items-center justify-center flex-col flex-wrap py-24 relative z-[1]">
           <p className="uppercase text-white text-xl mb-4">SAVE THE DATE</p>
-          <p className="text-6xl font-secondary text-white font-medium mb-7">
+          <p className="text-[38px] md:text-6xl font-secondary text-white font-medium mb-7">
             Isabella <span className="text-2xl">&</span> Andrew
           </p>
           <div className="h-[1px] w-28 bg-white"></div>
@@ -52,23 +52,23 @@ export default function HeroSection() {
             SEPT <span className="font-secondary text-5xl font-medium mx-4">24</span> 2022
           </p>
           {/* <Button title='RSVP' /> */}
-          <Button title="Test asdasdasd" />
+          <Button label="RSVP" className="mt-10" />
         </div>
 
         {/* decor */}
         <div className="absolute top-1/2 -translate-y-1/2 -left-11">
           <RenderIcon
             name="flower-hero"
-            className="text-secondary opacity-60 w-[278px] h-[503px]"
+            className="text-secondary opacity-60 w-[219px] h-[395px] lg:w-[278px] lg:h-[503px]"
           />
         </div>
         <div className="absolute rotate-180 top-1/2 -translate-y-1/2 -right-11">
           <RenderIcon
             name="flower-hero"
-            className="text-secondary opacity-60 w-[278px] h-[503px]"
+            className="text-secondary opacity-60 w-[219px] h-[395px] lg:w-[278px] lg:h-[503px]"
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
