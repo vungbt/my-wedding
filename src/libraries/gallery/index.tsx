@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import { RenderIcon } from '../icons';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Slider, { Settings } from 'react-slick';
 import Image from 'next/image';
 import clsx from 'clsx';

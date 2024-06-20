@@ -106,7 +106,9 @@ export default function AboutUs() {
             placerat aliquet sem commodo molestie.
           </p>
           {/* signature */}
-          <div className="w-[300px] h-[60px] bg-secondary"></div>
+          <div className="flex w-full justify-center">
+            <div className="w-[300px] h-[60px] bg-secondary"></div>
+          </div>
         </div>
       </div>
     </section>

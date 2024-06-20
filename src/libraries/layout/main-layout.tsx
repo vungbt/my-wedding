@@ -9,7 +9,7 @@ export function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
       <HeaderLayout />
-      <main>{children}</main>
+      <main className="overflow-x-hidden">{children}</main>
       <FooterLayout />
     </>
   );
