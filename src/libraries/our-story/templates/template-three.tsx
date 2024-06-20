@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Button from '@/libraries/common/button';
 import { RenderIcon } from '@/libraries/icons';
 import Image from 'next/image';
