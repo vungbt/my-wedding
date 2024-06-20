@@ -64,7 +64,7 @@ export default function OutStory() {
           {/* template 3 */}
           <TemplateThree />
 
-          <div className="w-full bg-white flex justify-center items-center">
+          <div className="w-full bg-white flex justify-center items-center relative z-[2]">
             <RenderIcon
               name="ring"
               className="text-secondary !w-[80px] !h-[92px] mt-5 opacity-50"
